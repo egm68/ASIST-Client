@@ -10,6 +10,8 @@ var phaserConfig = {
     dom: {
         createContainer: true
     },
+    con
+};
     //scene: {
     //    preload: preload,
     //    create: create,
@@ -22,8 +24,8 @@ var phaserConfig = {
     //        debug: false
     //    }
     //} 
-    con
-};
+
+
 
 //var controls;
 //this.cameras.main.setBounds(0, 0, 50, 92);
