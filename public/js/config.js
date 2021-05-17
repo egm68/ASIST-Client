@@ -10,7 +10,6 @@ var phaserConfig = {
     dom: {
         createContainer: true
     },
-    con
 };
     //scene: {
     //    preload: preload,
