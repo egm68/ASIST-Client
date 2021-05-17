@@ -190,25 +190,26 @@ var gamePlayState = new Phaser.Class({
 });
 
 const game = new Phaser.Game(phaserConfig); //Instantiate the game
+//var game = new Phaser.Game(phaserConfig); //Instantiate the game
 game.scene.add("Gameplay", gamePlayState);
 
 
-this.cameras.main.setBounds(0, 0, 4000, 4000);
+//this.cameras.main.setBounds(0, 0, 4000, 4000);
 
-var cursors = this.input.keyboard.createCursorKeys();
+//var cursors = this.input.keyboard.createCursorKeys();
 
-var controlConfig = {
-    camera: this.cameras.main,
-    left: cursors.left,
-    right: cursors.right,
-    up: cursors.up,
-    down: cursors.down,
-    acceleration: 0.06,
-    drag: 0.0005,
-    maxSpeed: 1.0
-};
+//var controlConfig = {
+ //   camera: this.cameras.main,
+ //   left: cursors.left,
+ //   right: cursors.right,
+ //   up: cursors.up,
+ //   down: cursors.down,
+ //   acceleration: 0.06,
+ //   drag: 0.0005,
+ //   maxSpeed: 1.0
+//};
 
-controls = new Phaser.Cameras.Controls.SmoothedKeyControl(controlConfig);
+//controls = new Phaser.Cameras.Controls.SmoothedKeyControl(controlConfig);
 
 
 
