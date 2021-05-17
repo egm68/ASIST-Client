@@ -15,13 +15,14 @@ var phaserConfig = {
     //    create: create,
     //    update: update
     //},
-    physics: {
-        default: 'arcade',
-        arcade: {
-            gravity: { y: 0 },
-            debug: false
-        }
-    } 
+    //physics: {
+    //    default: 'arcade',
+    //    arcade: {
+    //        gravity: { y: 0 },
+    //        debug: false
+    //    }
+    //} 
+    con
 };
 
 //var controls;
