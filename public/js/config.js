@@ -1,9 +1,20 @@
 var phaserConfig = {
     type: Phaser.AUTO,
-    width: 775,
-    height: 625,
-    parent: 'phaser-game',
     backgroundColor:0xffffff,
+    scale: {
+        _mode: Phaser.Scale.FIT,
+        parent: 'phaser-game',
+        width: 775,
+        height: 625,
+    },
+    dom: {
+        createContainer: true
+    },
+    scene: {
+        preload: preload,
+        create: create,
+        update: update
+    },
     physics: {
         default: 'arcade',
         arcade: {
@@ -12,6 +23,23 @@ var phaserConfig = {
         }
     } 
 };
+
+var controls;
+this.cameras.main.setBounds(0, 0, 50, 92);
+var cursors = this.input.keyboard.createCursorKeys();
+
+var controlConfig = {
+    camera: this.cameras.main,
+    left: cursors.left,
+    right: cursors.right,
+    up: cursors.up,
+    down: cursors.down,
+    acceleration: 0.06,
+    drag: 0.0005,
+    maxSpeed: 1.0
+};
+
+controls = new Phaser.Cameras.Controls.SmoothedKeyControl(controlConfig);
 
 var mapData = {'cols': 50,'rows': 92, 'victimIndexes': [2802, 3666],
 'hallwayBoundaryIndexes':[107,	108,	109,	110,	111,

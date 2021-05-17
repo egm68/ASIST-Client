@@ -69,9 +69,9 @@ var gamePlayState = new Phaser.Class({
                         "key":"left", 'rm_id':room_id, 'idx': playerId, "k_time":new Date().toISOString(),
                         "event": "player_move", "dTime": this.gameConfig.dTime
                     })
-                    //if ((x+1) in mapData.hallwayBoundaryIndexes || (x+1) in roomWallIndexes || (y+1) in mapData.hallwayBoundaryIndexes || (y+1) in roomWallIndexes){
-                        //move map left
-                    //}
+                    if ((x-1) in mapData.hallwayBoundaryIndexes){
+                        game.camera.x -= 4;
+                    }
                 }
             }
             if (Phaser.Input.Keyboard.JustDown(this.keys.RIGHT)){
@@ -83,9 +83,9 @@ var gamePlayState = new Phaser.Class({
                         "key":"right", 'rm_id':room_id, 'idx': playerId, "k_time":new Date().toISOString(),
                         "event": "player_move", "dTime": this.gameConfig.dTime
                     })
-                    //if ((x+1) in mapData.hallwayBoundaryIndexes || (x+1) in roomWallIndexes || (y+1) in mapData.hallwayBoundaryIndexes || (y+1) in roomWallIndexes){
-                        //move map right
-                   // }         
+                    if ((x+1) in mapData.hallwayBoundaryIndexes){
+                        game.camera.x += 4;
+                    }         
                 }
             }
             if (Phaser.Input.Keyboard.JustDown(this.keys.UP)){
@@ -97,9 +97,9 @@ var gamePlayState = new Phaser.Class({
                         "key":"up", 'rm_id':room_id, 'idx': playerId, "k_time":new Date().toISOString(),
                         "event": "player_move", "dTime": this.gameConfig.dTime
                     })
-                    //if ((x+1) in mapData.hallwayBoundaryIndexes || (x+1) in roomWallIndexes || (y+1) in mapData.hallwayBoundaryIndexes || (y+1) in roomWallIndexes){
-                        //move map up
-                    //}
+                    if ((y-1) in mapData.hallwayBoundaryIndexes){
+                        game.camera.y -= 4;
+                    }
                 }
             }
             if (Phaser.Input.Keyboard.JustDown(this.keys.DOWN)){             
@@ -111,9 +111,9 @@ var gamePlayState = new Phaser.Class({
                         "key":"down", 'rm_id':room_id, 'idx': playerId, "k_time":new Date().toISOString(),
                         "event": "player_move", "dTime": this.gameConfig.dTime
                     })
-                    //if ((x+1) in mapData.hallwayBoundaryIndexes || (x+1) in roomWallIndexes || (y+1) in mapData.hallwayBoundaryIndexes || (y+1) in roomWallIndexes){
-                        //move map down
-                    //}
+                    if ((y+1) in mapData.hallwayBoundaryIndexes){
+                        game.camera.y += 4;
+                    }
                 }
             }
         }
@@ -189,9 +189,30 @@ var gamePlayState = new Phaser.Class({
 
 });
 
-
-const game = new Phaser.Game(phaserConfig); //Instantiate the game
+var game = new Phaser.Game(phaserConfig); //Instantiate the game
 game.scene.add("Gameplay", gamePlayState);
+
+
+this.cameras.main.setBounds(0, 0, 4000, 4000);
+
+var cursors = this.input.keyboard.createCursorKeys();
+
+var controlConfig = {
+    camera: this.cameras.main,
+    left: cursors.left,
+    right: cursors.right,
+    up: cursors.up,
+    down: cursors.down,
+    acceleration: 0.06,
+    drag: 0.0005,
+    maxSpeed: 1.0
+};
+
+controls = new Phaser.Cameras.Controls.SmoothedKeyControl(controlConfig);
+
+
+
+
 
 
 socket.on('connect',()=>{
