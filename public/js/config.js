@@ -7,9 +7,9 @@ var phaserConfig = {
         width: 775,
         height: 625,
     },
-    //dom: {
-    //    createContainer: true
-    //},
+    dom: {
+        createContainer: true
+    },
     //scene: {
     //    preload: preload,
     //    create: create,
