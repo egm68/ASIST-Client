@@ -1,12 +1,12 @@
 var phaserConfig = {
     type: Phaser.AUTO,
     backgroundColor:0xffffff,
-    //scale: {
-       // _mode: Phaser.Scale.FIT,
+    scale: {
+        _mode: Phaser.Scale.FIT,
         parent: 'phaser-game',
         width: 775,
         height: 625,
-   // },
+    },
     //dom: {
     //    createContainer: true
     //},
