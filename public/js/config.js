@@ -26,7 +26,6 @@ var phaserConfig = {
 
 
 
-//var controls;
 //this.cameras.main.setBounds(0, 0, 50, 92);
 //var cursors = this.input.keyboard.createCursorKeys();
 

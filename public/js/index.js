@@ -189,8 +189,9 @@ var gamePlayState = new Phaser.Class({
 
 });
 
-const game = new Phaser.Game(phaserConfig); //Instantiate the game
-//var game = new Phaser.Game(phaserConfig); //Instantiate the game
+//var controls;
+//const game = new Phaser.Game(phaserConfig); //Instantiate the game
+var game = new Phaser.Game(phaserConfig); //Instantiate the game
 game.scene.add("Gameplay", gamePlayState);
 
 
