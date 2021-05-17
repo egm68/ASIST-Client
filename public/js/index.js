@@ -69,9 +69,9 @@ var gamePlayState = new Phaser.Class({
                         "key":"left", 'rm_id':room_id, 'idx': playerId, "k_time":new Date().toISOString(),
                         "event": "player_move", "dTime": this.gameConfig.dTime
                     })
-                    if ((x-1) in mapData.hallwayBoundaryIndexes){
-                        game.camera.x -= 4;
-                    }
+                    //if ((x-1) in mapData.hallwayBoundaryIndexes){
+                    //    game.camera.x -= 4;
+                    //}
                 }
             }
             if (Phaser.Input.Keyboard.JustDown(this.keys.RIGHT)){
@@ -83,9 +83,9 @@ var gamePlayState = new Phaser.Class({
                         "key":"right", 'rm_id':room_id, 'idx': playerId, "k_time":new Date().toISOString(),
                         "event": "player_move", "dTime": this.gameConfig.dTime
                     })
-                    if ((x+1) in mapData.hallwayBoundaryIndexes){
-                        game.camera.x += 4;
-                    }         
+                    //if ((x+1) in mapData.hallwayBoundaryIndexes){
+                    //    game.camera.x += 4;
+                    //}         
                 }
             }
             if (Phaser.Input.Keyboard.JustDown(this.keys.UP)){
@@ -97,9 +97,9 @@ var gamePlayState = new Phaser.Class({
                         "key":"up", 'rm_id':room_id, 'idx': playerId, "k_time":new Date().toISOString(),
                         "event": "player_move", "dTime": this.gameConfig.dTime
                     })
-                    if ((y-1) in mapData.hallwayBoundaryIndexes){
-                        game.camera.y -= 4;
-                    }
+                    //if ((y-1) in mapData.hallwayBoundaryIndexes){
+                    //    game.camera.y -= 4;
+                    //}
                 }
             }
             if (Phaser.Input.Keyboard.JustDown(this.keys.DOWN)){             
@@ -111,9 +111,9 @@ var gamePlayState = new Phaser.Class({
                         "key":"down", 'rm_id':room_id, 'idx': playerId, "k_time":new Date().toISOString(),
                         "event": "player_move", "dTime": this.gameConfig.dTime
                     })
-                    if ((y+1) in mapData.hallwayBoundaryIndexes){
-                        game.camera.y += 4;
-                    }
+                    //if ((y+1) in mapData.hallwayBoundaryIndexes){
+                    //    game.camera.y += 4;
+                    //}
                 }
             }
         }
@@ -189,7 +189,7 @@ var gamePlayState = new Phaser.Class({
 
 });
 
-var game = new Phaser.Game(phaserConfig); //Instantiate the game
+const game = new Phaser.Game(phaserConfig); //Instantiate the game
 game.scene.add("Gameplay", gamePlayState);
 
 
