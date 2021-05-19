@@ -55,36 +55,6 @@ var gamePlayState = new Phaser.Class({
 
         socket.on('player_move', (message)=>{this.gameState.playerMove(message, playerId)});
 
-        var sf = 0.5;
-        var px = 64;
-
-        for (var i = 1; i <= 100; i++)
-        {
-            var x = Phaser.Math.Between(100, 2000);
-            var y = Phaser.Math.Between(100, 2000);
-
-            var element = this.add.dom(x, y, 'div', 'font-size: ' + px + 'px', Phaser.Utils.Array.GetRandom(smileys)).setScrollFactor(sf);
-
-            element.setPerspective(800);
-
-            element.rotate3d.set(Math.random(), Math.random(), Math.random(), 0);
-
-            this.tweens.add({
-                targets: element.rotate3d,
-                w: 180,
-                duration: 2000,
-                ease: 'Sine.easeInOut',
-                loop: -1,
-                yoyo: true
-            });
-
-            if (i % 50 === 0)
-            {
-                sf += 0.1;
-                px += 32;
-            }
-        }
-
         this.cameras.main.setBounds(0, 0, 4000, 4000);
 
         var cursors = this.input.keyboard.createCursorKeys();
@@ -241,28 +211,6 @@ var controls;
 //const game = new Phaser.Game(phaserConfig); //Instantiate the game
 var game = new Phaser.Game(phaserConfig); //Instantiate the game
 game.scene.add("Gameplay", gamePlayState);
-
-
-//this.cameras.main.setBounds(0, 0, 4000, 4000);
-
-//var cursors = this.input.keyboard.createCursorKeys();
-
-//var controlConfig = {
- //   camera: this.cameras.main,
- //   left: cursors.left,
- //   right: cursors.right,
- //   up: cursors.up,
- //   down: cursors.down,
- //   acceleration: 0.06,
- //   drag: 0.0005,
- //   maxSpeed: 1.0
-//};
-
-//controls = new Phaser.Cameras.Controls.SmoothedKeyControl(controlConfig);
-
-
-
-
 
 
 socket.on('connect',()=>{
