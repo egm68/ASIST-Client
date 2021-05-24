@@ -303,5 +303,5 @@ var gameSetUpData = {"roundCount":100, "playerX":5, "playerY":77, "leaderX":3, "
 }
 
 
-var socketURL = "https://erin-game-deployment.herokuapp.com/"
+var socketURL = "http://localhost:880"
 export {phaserConfig, mapData, gameSetUpData, socketURL};
